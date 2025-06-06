@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>年別収支・残高</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    {% include 'navbar.html' %}
+        <h1>年別 収入・交通費・所得・残高</h1>
+        <table>
+            <tr>
+                <th>年</th>
+                <th>収入</th>
+                <th>交通費</th>
+                <th>所得 (収入−交通費)</th>
+                <th>その他支出</th>
+                <th>残高 (所得−その他支出)</th>
+            </tr>
+            {% for row in summary %}
+            <tr>
+                <td>{{ row.year }}</td>
+                <td>{{ row.income }}</td>
+                <td>{{ row.transport }}</td>
+                <td>{{ row.所得 }}</td>
+                <td>{{ row.other_expense }}</td>
+                <td>{{ row.残高 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

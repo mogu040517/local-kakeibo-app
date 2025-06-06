@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>収支一覧</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    {% include 'navbar.html' %}
+    <h1>収支一覧</h1>
+    <table border="1">
+      <tr>
+        <th>日付</th>
+        <th>カテゴリ</th>
+        <th>金額</th>
+        <th>種別</th>
+        <th>操作</th>
+      </tr>
+      {% for r in records %}
+      <tr>
+        <td>{{ r.date }}</td>
+        <td>{{ r.category }}</td>
+        <td>{{ r.amount }}</td>
+        <td>{{ '収入' if r.type == 'income' else '支出' }}</td>
+        <td>
+          <form method="post" action="/delete_record/{{ r.id }}" style="display:inline;">
+            <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+
+</html>

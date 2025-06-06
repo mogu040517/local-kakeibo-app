@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  max-width: 600;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;         /* ← 最大幅を指定 */
+  margin: 40px auto;        /* ← 自動で中央寄せ */
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.container-min{
+  width: 100%;
+  max-width: 600px; 
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+
+}
+
+
+.navbar {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar .text-danger {
+  color: #cc0000;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;  /* 中央に配置 */
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"],
+form input[type="number"],
+form input[type="date"] {
+  width: 50%;
+  padding: 16px;           /* 高さを大きくする */
+  font-size: 18px;         /* 文字も大きめに */
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  display: block;
+  width: 20%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+

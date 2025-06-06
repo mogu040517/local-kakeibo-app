@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>カテゴリ別年別支出</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        {% include 'navbar.html' %}
+
+        <h1>カテゴリ別・年別支出集計</h1>
+        <table border="1">
+            <tr>
+                <th>年</th>
+                <th>カテゴリ</th>
+                <th>支出合計</th>
+            </tr>
+            {% for row in summary %}
+            <tr>
+                <td>{{ row.year }}</td>
+                <td>{{ row.category }}</td>
+                <td>{{ row.total_expense }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>月別集計</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        {% include 'navbar.html' %}
+
+        <h1>月別の収入と支出</h1>
+        <table border="1">
+            <tr>
+                <th>月</th>
+                <th>収入合計</th>
+                <th>支出合計</th>
+            </tr>
+            {% for row in summary %}
+            <tr>
+                <td>{{ row.month }}</td>
+                <td>{{ row.total_income }}</td>
+                <td>{{ row.total_expense }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

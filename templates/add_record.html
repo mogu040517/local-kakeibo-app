@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>収支登録</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container-min">
+    {% include 'navbar.html' %}
+        <h1>収支を登録</h1>
+        <form method="post">
+            <input type="date" name="date" required placeholder="日付"><br>
+
+            <input type="text" name="category" placeholder="カテゴリ" required><br>
+
+            <input type="number" name="amount" placeholder="金額" required><br>
+
+            <div class="radio-group">
+                <label>種別:</label>
+                <input type="radio" id="expense" name="type" value="expense" required>
+                <label for="expense">支出</label>
+
+                <input type="radio" id="income" name="type" value="income">
+                <label for="income">収入</label>
+            </div>
+            <p>カテゴリ：生活費、バイト代、飲食代</p>
+            <button type="submit">登録</button>
+        </form>
+    </div>
+</body>
+</html>
